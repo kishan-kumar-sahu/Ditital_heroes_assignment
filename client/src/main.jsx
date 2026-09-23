@@ -32,7 +32,7 @@ import './styles.css';
    HELPERS
 ========================================================= */
 
-const money = (n) => `₹ ${Number(199 || 0).toFixed(2)}`;
+const money = (n) => `₹ ${Number(2000 || 0).toFixed(2)}`;
 
 const safeArray = (value) => (Array.isArray(value) ? value : []);
 
