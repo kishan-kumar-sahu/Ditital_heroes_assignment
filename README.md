@@ -110,24 +110,58 @@ Do not commit real Razorpay credentials to GitHub.
 - Admin charity CRUD.
 
 ## Run locally
-### 1. Start MongoDB
-With Docker:
-```bash
-docker compose up -d
-```
-Or use MongoDB Atlas and set `MONGO_URI` in `api/.env`.
+### 1. Installation
 
-### 2. Install dependencies
 ```bash
-npm install
-npm run install-all
+git clone https://github.com/kishan-kumar-sahu/Ditital_heroes_assignment.git
+
+In Terminal For Frontend:
+ 1. cd client
+ 2.npm install
+ 3. npm run dev
+
+Install frontend and backend dependencies:
+ 1. cd api
+ 2.npm install
+ 3. npm run dev
 ```
+
 
 ### 3. Environment files
 Copy:
 ```text
 api/.env.example -> api/.env
 client/.env.example -> client/.env
+
+ 
+```
+###  Environment files for Backend
+Copy :
+
+```text
+  
+api/.env.example -> api/.env
+For Demo
+PORT=5000
+# MONGO_URI=mongodb://127.0.0.1:27017/digital_heroes
+MONGO_URI=" ypur mongoDb url"
+
+JWT_SECRET=kishan_@#$kumar_@#$sahu_si@raha
+CLIENT_URL=http://localhost:5173
+
+### Razorpay test/live credentials
+RAZORPAY_KEY_ID="your razorpay_key_id"
+RAZORPAY_KEY_SECRET="your razorpay_key_secrete"
+RAZORPAY_CURRENCY=INR
+
+```
+
+
+###  Environment files for frontend
+
+```text
+client/.env.example -> client/.env
+VITE_API_URL=http://localhost:5000/api
 ```
 
 Default local values work with Docker MongoDB.
