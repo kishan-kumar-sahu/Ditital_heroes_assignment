@@ -1,0 +1,4 @@
+import {Draw,Winner} from '../models/index.js'; import {simulate} from '../utils/draw.js'; import {money} from '../utils/security.js';
+export async function list(req,res){res.json({draws:await Draw.find().sort({drawDate:-1}).lean()})}
+export async function simulation(req,res){res.json({simulation:await simulate(req.body.mode||'random')})}
+export async function publish(req,res){const sim=await simulate(req.body.mode||'random');const draw=await Draw.create({drawDate:new Date().toISOString().slice(0,10),status:'published',winningNumbers:sim.winningNumbers,mode:sim.mode,pool:sim.pool,tiers:sim.tiers,eligible:sim.eligible});for(const r of sim.rows){await Winner.create({drawId:draw._id,userId:r.userId,matches:r.matches,prize:sim.tiers[r.matches].perWinner,verification:'pending',payoutStatus:'pending'})}res.json({draw})}

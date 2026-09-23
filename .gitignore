@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.log
+.DS_Store
+api/.env
+client/.env
+
+
+api/node_modules
+client/node_modules
+api/.env
+api/.env
