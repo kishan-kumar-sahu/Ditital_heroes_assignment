@@ -81,9 +81,9 @@ Digital_Heroes/
 ├── package.json
 └── README.md
 ```
-
+## Razorpay environment variables
 ```text
-Razorpay environment variables
+
 
 Configure the API environment with:
 
