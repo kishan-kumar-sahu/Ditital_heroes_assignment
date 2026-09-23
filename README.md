@@ -12,22 +12,88 @@ This version keeps the existing Digital Heroes business logic and API behavior w
 
 ## MVC structure
 ```text
-api/
-├── config/db.js
-├── controllers/       # business/request logic
-├── middleware/        # JWT auth + role access
-├── models/            # MongoDB/Mongoose schemas
-├── routes/            # REST endpoints
-├── utils/              # password, draw engine, seed
-└── src.js              # Express bootstrap
-
-client/
-├── public/assets/
-└── src/
-    ├── api.js
-    ├── main.jsx
-    └── styles.css
+Digital_Heroes/
+│
+├── api/
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── controllers/
+│   │   ├── adminController.js
+│   │   ├── authController.js
+│   │   ├── charityController.js
+│   │   ├── dashboardController.js
+│   │   ├── drawController.js
+│   │   ├── paymentController.js
+│   │   ├── scoreController.js
+│   │   ├── subscriptionController.js
+│   │   └── winnerController.js
+│   │
+│   ├── middleware/
+│   │   └── auth.js
+│   │
+│   ├── models/
+│   │   └── index.js
+│   │
+│   ├── routes/
+│   │   └── api.js
+│   │
+│   ├── utils/
+│   │   ├── draw.js
+│   │   ├── security.js
+│   │   └── seed.js
+│   │
+│   ├── .env
+│   ├── package.json
+│   └── src.js
+│
+├── client/
+│   ├── public/
+│   │   └── assets/
+│   │       ├── charity-default.svg
+│   │       ├── charity-1.svg
+│   │       ├── charity-2.svg
+│   │       └── ...
+│   │
+│   ├── src/
+│   │   ├── api.js
+│   │   ├── main.jsx
+│   │   └── styles.css
+│   │
+│   ├── .env
+│   ├── index.html
+│   └── package.json
+│
+├── docs/
+│   └── requirement-matrix.md
+│
+├── screenshots/
+│   ├── architecture.png
+│   ├── admin-dashboard.png
+│   ├── user-dashboard.png
+│   ├── login.png
+│   ├── user-preview.html
+│   └── admin-preview.html
+│
+├── .env.example
+├── .gitignore
+├── CHANGES.md
+├── package.json
+└── README.md
 ```
+
+```text
+Razorpay environment variables
+
+Configure the API environment with:
+
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+RAZORPAY_CURRENCY=INR
+
+Do not commit real Razorpay credentials to GitHub.
+```
+
 
 ## Business logic preserved
 - Stableford score range 1–45.
